@@ -4,23 +4,21 @@ import face_recognition_models
 from sklearn.svm import SVC
 from src.database.db import get_all_students
 import streamlit as st
+import sys
+import types
+
+if 'pkg_resources' not in sys.modules:
+    pkg = types.ModuleType('pkg_resources')
+    def resource_filename(package_or_requirement, resource_name):
+        import importlib.util, os
+        spec = importlib.util.find_spec(package_or_requirement)
+        return os.path.join(os.path.dirname(spec.origin), resource_name)
+    pkg.resource_filename = resource_filename
+    sys.modules['pkg_resources'] = pkg
+
 
 @st.cache_resource
 def load_dlib_models():
-    # 1. Face Detector
-    # This loads a HOG + SVM-based face detector
-    # Its job is to locate faces in an image and return bounding boxes
-    # It’s lightweight and runs efficiently on CPU
-    
-    # 2. Landmark Detector - shape predictor
-    # Loads a pretrained 68-point facial landmark model
-    # Given a detected face, it extracts key facial points (eyes, nose, mouth, jawline)
-    # This is used for face alignment, which standardizes orientation before recognition
-
-    # 3. Face Recognition model
-    # Loads a deep learning model (ResNet-based)
-    # Converts a face into a 128-dimensional embedding vector
-    # This vector is used for identity matching via distance comparison
     
     detector = dlib.get_frontal_face_detector()
     
