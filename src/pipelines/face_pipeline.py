@@ -1,16 +1,6 @@
 
 import sys
 import types
-
-if 'pkg_resources' not in sys.modules:
-    pkg = types.ModuleType('pkg_resources')
-    def resource_filename(package_or_requirement, resource_name):
-        import importlib.util, os
-        spec = importlib.util.find_spec(package_or_requirement)
-        return os.path.join(os.path.dirname(spec.origin), resource_name)
-    pkg.resource_filename = resource_filename
-    sys.modules['pkg_resources'] = pkg
-
 import dlib
 import numpy as np
 import face_recognition_models
