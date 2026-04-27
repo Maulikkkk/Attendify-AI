@@ -1,9 +1,4 @@
-import dlib
-import numpy as np
-import face_recognition_models
-from sklearn.svm import SVC
-from src.database.db import get_all_students
-import streamlit as st
+
 import sys
 import types
 
@@ -16,6 +11,12 @@ if 'pkg_resources' not in sys.modules:
     pkg.resource_filename = resource_filename
     sys.modules['pkg_resources'] = pkg
 
+import dlib
+import numpy as np
+import face_recognition_models
+from sklearn.svm import SVC
+from src.database.db import get_all_students
+import streamlit as st
 
 @st.cache_resource
 def load_dlib_models():
