@@ -6,9 +6,17 @@ It eliminates manual roll calls and replaces them with fast, accurate, and scala
 
 ---
 
+
 ## 🌐 Live Demo
 
-👉 https://attendifyai.streamlit.app/
+👉 **Try the App (Recommended)**
+https://attendifyai.streamlit.app/
+
+👉 Landing Page (Overview)
+https://attendifyai-landing-page.vercel.app/
+
+⚡ No signup required. Try face/voice attendance instantly.
+
 
 ---
 
